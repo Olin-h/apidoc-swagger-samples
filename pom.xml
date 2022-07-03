@@ -7,6 +7,7 @@
         <module>swagger-v2-sample</module>
         <module>swagger-v3-sample</module>
         <module>springdoc-openapi-sample</module>
+        <module>knife4j-swagger-sample</module>
     </modules>
 
     <parent>
@@ -16,8 +17,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <groupId>org.olinonee.framework</groupId>
     <artifactId>apidoc-swagger-samples</artifactId>
+    <version>${revision}</version>
+
     <properties>
+        <!-- 修订版本 -->
+        <revision>1.0.1</revision>
         <hutool-all.version>5.8.3</hutool-all.version>
     </properties>
 
