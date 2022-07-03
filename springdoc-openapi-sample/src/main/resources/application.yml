@@ -1,0 +1,16 @@
+server:
+  port: 500
+  servlet:
+    context-path: /springdoc-openapi
+
+spring:
+  application:
+    name: springdoc-openapi-sample
+
+# swagger-ui自定义路径
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    # 自定义swagger路径，访问路径：http://server:port/context-path/swagger-ui.html
+    path: /swagger-ui.html

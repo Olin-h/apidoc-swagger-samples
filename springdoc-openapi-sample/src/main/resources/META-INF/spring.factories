@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.olinonee.framework.springdoc.openapi.config.SwaggerAutoConfiguration

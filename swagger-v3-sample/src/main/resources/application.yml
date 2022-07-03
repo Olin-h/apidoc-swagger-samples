@@ -1,0 +1,12 @@
+server:
+  port: 700
+  servlet:
+    context-path: /swagger-v3
+
+spring:
+  application:
+    name: swagger-v3-sample
+  mvc:
+    # 解决Spring Boot 2.6.X swagger接口列表不显示的问题 这是因为Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X使用的是PathPatternMatcher。
+    pathmatch:
+      matching-strategy: ant_path_matcher
