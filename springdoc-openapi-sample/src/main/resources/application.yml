@@ -10,7 +10,20 @@ spring:
 # swagger-ui自定义路径
 springdoc:
   api-docs:
+    # 是否开启文档功能
     enabled: true
   swagger-ui:
     # 自定义swagger路径，访问路径：http://server:port/context-path/swagger-ui.html
     path: /swagger-ui.html
+  # 包扫描路径
+  packages-to-scan: org.olinonee.framework.springdoc.openapi.controller,org.olinonee.framework.springdoc.openapi.entity
+  # 这里定义了两个分组，可定义多个，也可以不定义
+  group-configs:
+    # 分组名
+    - group: order-api
+      # 按路径匹配
+      pathsToMatch: /order/**
+      # 分组名
+    - group: user-api
+      # 按路径匹配
+      pathsToMatch: /user/**
