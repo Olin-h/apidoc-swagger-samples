@@ -1,0 +1,23 @@
+server:
+  port: 401
+
+spring:
+  application:
+    name: service-user
+  mvc:
+    # 解决Spring Boot 2.6.X swagger接口列表不显示的问题 这是因为Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X使用的是PathPatternMatcher。
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:28999
+        namespace: apidoc-swagger-samples
+        group: DEV_GROUP
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
+        namespace: apidoc-swagger-samples
+        group: DEV_GROUP
+#knife4j:
+#  enable: true
