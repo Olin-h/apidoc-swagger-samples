@@ -15,6 +15,7 @@
     <modules>
         <module>knife4j-aggregation-nacos-sample</module>
         <module>knife4j-gateway-sample</module>
+        <module>knife4j-v3-sample</module>
     </modules>
 
     <properties>

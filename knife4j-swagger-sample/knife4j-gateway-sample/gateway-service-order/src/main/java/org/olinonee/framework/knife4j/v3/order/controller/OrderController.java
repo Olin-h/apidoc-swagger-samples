@@ -1,4 +1,4 @@
-package org.olinonee.framework.knife4j.order.controller;
+package org.olinonee.framework.knife4j.v3.order.controller;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.json.JSONUtil;
@@ -6,7 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.olinonee.framework.knife4j.order.entity.Order;
+import org.olinonee.framework.knife4j.v3.order.entity.Order;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

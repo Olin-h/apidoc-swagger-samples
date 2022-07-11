@@ -1,5 +1,5 @@
 //
-// package org.olinonee.framework.knife4j.order.config;
+// package org.olinonee.framework.knife4j.v3.user.config;
 //
 // import com.github.xiaoymin.knife4j.core.util.CollectionUtils;
 // import com.github.xiaoymin.knife4j.spring.extension.OpenApiExtensionResolver;
@@ -23,8 +23,8 @@
 //
 //
 // @Configuration
-// @EnableSwagger2
 // @Import(BeanValidatorPluginsConfiguration.class)
+// @EnableSwagger2
 // public class SwaggerConfiguration {
 //
 // 	/*引入Knife4j提供的扩展类*/
@@ -35,24 +35,30 @@
 // 		this.openApiExtensionResolver = openApiExtensionResolver;
 // 	}
 //
-// 	@Bean(value = "orderApi")
-// 	public Docket orderApi() {
+// 	@Bean(value = "userApi")
+// 	public Docket userApi() {
 // 		// return new Docket(DocumentationType.SWAGGER_2)
 // 		return new Docket(DocumentationType.OAS_30)
-// 			.apiInfo(orderApiInfo())
+// 			.apiInfo(userApiInfo())
 // 			.select()
+// 			// 指定目录生成API
 // 			.apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
 // 			.paths(PathSelectors.any())
 // 			.build()
-// 			// .securitySchemes(securitySchemes())
-// 			// .securityContexts(securityContexts())
+// 			.extensions(openApiExtensionResolver.buildExtensions("userApi"))
+// 			.securitySchemes(securitySchemes())
+// 			.securityContexts(securityContexts())
 // 			;
 // 	}
 //
-// 	private ApiInfo orderApiInfo() {
+// 	/**
+// 	 * 创建Swagger页面 信息
+// 	 */
+// 	private ApiInfo userApiInfo() {
 // 		return new ApiInfoBuilder()
-// 			.title("订单服务 - 接口文档")
-// 			.description("<div style='font-size:14px;color:red;'>订单服务聚合接口文档</div>")
+// 			.title("用户服务 - 接口文档")
+// 			.description("<div style='font-size:14px;color:red;'>用户服务聚合接口文档</div>")
+// 			.license("Powered By Olinonee")
 // 			.licenseUrl("https://gitee.com/OlinOnee/apidoc-swagger-samples")
 // 			.termsOfServiceUrl("https://gitee.com/OlinOnee/apidoc-swagger-samples")
 // 			.contact(new Contact("olinonee", "https://gitee.com/OlinOnee", "olinone666@gmail.com"))

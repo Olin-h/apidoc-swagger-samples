@@ -1,9 +1,9 @@
 server:
-  port: 1401
+  port: 1303
 
 spring:
   application:
-    name: service-order
+    name: knife4j-v3-user
   mvc:
     # 解决Spring Boot 2.6.X swagger接口列表不显示的问题 这是因为Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X使用的是PathPatternMatcher。
     pathmatch:
@@ -24,19 +24,22 @@ spring:
 
 knife4j:
   enable: true
-  production: false
-  basic:
+#  production: false
+#  basic:
+#    enable: true
+#    username: root
+#    password: root
+#  setting:
+#    # 是否不显示Knife4j默认的footer，默认为true(显示)
+#    enableFooter: false
+#    # 是否自定义Footer，默认为false(非自定义)
+#    enableFooterCustom: true
+#    # 自定义Footer内容,支持Markdown语法
+#    footerCustomContent: Copyright  2022-[apidoc-swagger-samples](https://gitee.com/apidoc-swagger-samples)
+#  documents: # 文档配置，可配置多个分组
+#    - group: userApi
+#      name: 接口说明文档
+#      locations: classpath:markdown/*
+customize:
+  swagger:
     enable: true
-    username: root
-    password: root
-  setting:
-    # 是否不显示Knife4j默认的footer，默认为true(显示)
-    enableFooter: false
-    # 是否自定义Footer，默认为false(非自定义)
-    enableFooterCustom: true
-    # 自定义Footer内容,支持Markdown语法
-    footerCustomContent: Copyright  2022-[apidoc-swagger-samples](https://gitee.com/apidoc-swagger-samples)
-  documents: # 文档配置，可配置多个分组
-    - group: orderApi
-      name: 接口说明文档
-      locations: classpath:markdown/*

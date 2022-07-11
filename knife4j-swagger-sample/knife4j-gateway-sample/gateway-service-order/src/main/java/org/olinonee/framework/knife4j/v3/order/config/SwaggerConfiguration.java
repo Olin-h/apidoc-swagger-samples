@@ -1,5 +1,5 @@
 
-package org.olinonee.framework.knife4j.user.config;
+package org.olinonee.framework.knife4j.v3.order.config;
 
 import com.github.xiaoymin.knife4j.core.util.CollectionUtils;
 import com.github.xiaoymin.knife4j.spring.extension.OpenApiExtensionResolver;
@@ -23,8 +23,8 @@ import java.util.List;
 
 
 @Configuration
-@Import(BeanValidatorPluginsConfiguration.class)
 @EnableSwagger2
+@Import(BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfiguration {
 
 	/*引入Knife4j提供的扩展类*/
@@ -35,30 +35,25 @@ public class SwaggerConfiguration {
 		this.openApiExtensionResolver = openApiExtensionResolver;
 	}
 
-	@Bean(value = "userApi")
-	public Docket userApi() {
+	@Bean(value = "orderApi")
+	public Docket orderApi() {
 		// return new Docket(DocumentationType.SWAGGER_2)
 		return new Docket(DocumentationType.OAS_30)
-			.apiInfo(userApiInfo())
+			.apiInfo(orderApiInfo())
 			.select()
-			// 指定目录生成API
 			.apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
 			.paths(PathSelectors.any())
 			.build()
-			.extensions(openApiExtensionResolver.buildExtensions("userApi"))
+			.extensions(openApiExtensionResolver.buildExtensions("orderApi"))
 			.securitySchemes(securitySchemes())
 			.securityContexts(securityContexts())
 			;
 	}
 
-	/**
-	 * 创建Swagger页面 信息
-	 */
-	private ApiInfo userApiInfo() {
+	private ApiInfo orderApiInfo() {
 		return new ApiInfoBuilder()
-			.title("用户服务 - 接口文档")
-			.description("<div style='font-size:14px;color:red;'>用户服务聚合接口文档</div>")
-			.license("Powered By Olinonee")
+			.title("订单服务 - 接口文档")
+			.description("<div style='font-size:14px;color:red;'>订单服务聚合接口文档</div>")
 			.licenseUrl("https://gitee.com/OlinOnee/apidoc-swagger-samples")
 			.termsOfServiceUrl("https://gitee.com/OlinOnee/apidoc-swagger-samples")
 			.contact(new Contact("olinonee", "https://gitee.com/OlinOnee", "olinone666@gmail.com"))

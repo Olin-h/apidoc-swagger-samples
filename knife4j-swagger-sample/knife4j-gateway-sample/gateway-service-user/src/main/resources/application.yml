@@ -22,16 +22,21 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-## knife4j配置
-#knife4j:
-#  # 是否开启Knife4j增强模式
-#  enable: true
-#  # 是否生产环境
-#  production: false
-#  basic:
-#    enable: false
-#    username: root
-#    password: root
-customize:
-  swagger:
+knife4j:
+  enable: true
+  production: false
+  basic:
     enable: true
+    username: root
+    password: root
+  setting:
+    # 是否不显示Knife4j默认的footer，默认为true(显示)
+    enableFooter: false
+    # 是否自定义Footer，默认为false(非自定义)
+    enableFooterCustom: true
+    # 自定义Footer内容,支持Markdown语法
+    footerCustomContent: Copyright  2022-[apidoc-swagger-samples](https://gitee.com/apidoc-swagger-samples)
+  documents: # 文档配置，可配置多个分组
+    - group: userApi
+      name: 接口说明文档
+      locations: classpath:markdown/*

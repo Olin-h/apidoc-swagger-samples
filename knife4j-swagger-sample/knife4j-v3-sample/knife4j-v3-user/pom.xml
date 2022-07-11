@@ -3,26 +3,30 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>knife4j-gateway-sample</artifactId>
+        <artifactId>knife4j-v3-sample</artifactId>
         <groupId>org.olinonee.framework</groupId>
-        <version>1.0.1</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>gateway-service-user</artifactId>
+    <artifactId>knife4j-v3-user</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-
-        <knife4j-micro.version>3.0.3</knife4j-micro.version>
+        <knife4j.version>3.0.3</knife4j.version>
     </properties>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-micro-spring-boot-starter</artifactId>
-            <version>${knife4j-micro.version}</version>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>${knife4j.version}</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.olinonee.framework</groupId>
+            <artifactId>knife4j-v3-web</artifactId>
+            <version>${revision}</version>
         </dependency>
 
         <!-- nacos 服务发现与注册 -->
@@ -41,4 +45,5 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
+
 </project>

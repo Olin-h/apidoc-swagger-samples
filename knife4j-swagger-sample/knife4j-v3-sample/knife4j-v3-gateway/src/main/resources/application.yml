@@ -1,0 +1,30 @@
+server:
+  port: 1300
+
+spring:
+  application:
+    name: knife4j-v3-gateway-server
+  # Spring MVC found on classpath, which is incompatible with Spring Cloud Gateway.
+  # Please set spring.main.web-application-type=reactive or remove spring-boot-starter-web dependency.
+  main:
+    web-application-type: reactive
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:28999
+        namespace: apidoc-swagger-samples
+        group: DEV_GROUP
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
+        namespace: apidoc-swagger-samples
+        group: DEV_GROUP
+
+    # gateway的配置
+    gateway:
+      discovery:
+        locator:
+          # enabled：默认为false，设置为true表明spring cloud gateway开启服务发现和路由的功能，网关自动根据注册中心的服务名为每个服务创建一个router，将以服务名开头的请求路径转发到对应的服务
+          enabled: true
+          # lower-case-service-id：启动 locator.enabled=true 自动路由时，路由的路径默认会使用大写服务ID，若想要使用小写服务ID，可将该属性设置为true
+          lower-case-service-id: true
