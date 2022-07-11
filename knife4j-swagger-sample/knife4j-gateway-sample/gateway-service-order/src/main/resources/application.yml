@@ -8,32 +8,47 @@ spring:
     # 解决Spring Boot 2.6.X swagger接口列表不显示的问题 这是因为Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X使用的是PathPatternMatcher。
     pathmatch:
       matching-strategy: ant_path_matcher
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:28999
+#        namespace: apidoc-swagger-samples
+#        group: DEV_GROUP
+#      config:
+#        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+#        file-extension: yaml
+#        namespace: apidoc-swagger-samples
+#        group: DEV_GROUP
   cloud:
     nacos:
-      discovery:
-        server-addr: 127.0.0.1:28999
-        namespace: apidoc-swagger-samples
-        group: DEV_GROUP
       config:
-        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        server-addr: 127.0.0.1:28999
         file-extension: yaml
-        namespace: apidoc-swagger-samples
-        group: DEV_GROUP
 
-# knife4j配置
-knife4j:
-  # 是否开启Knife4j增强模式
-  enable: true
-  # 开启生产环境屏蔽
-  production: false
-  basic:
-    enable: true
-    username: root
-    password: root
-  setting:
-    # 是否不显示Knife4j默认的footer，默认为true(显示)
-    enableFooter: false
-    # 是否自定义Footer，默认为false(非自定义)
-    enableFooterCustom: true
-    # 自定义Footer内容,支持Markdown语法
-    footerCustomContent: Apache License 2.0 | Copyright  2020-2022
+        password: nacos
+        namespace: public
+        extension-configs:
+          - mate.yaml
+          - mate-local.yaml
+          - mate-dynamic-routes.yaml
+
+      discovery:
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+        password: nacos
+        namespace: public
+  main:
+    allow-bean-definition-overriding: true
+
+## knife4j配置
+#knife4j:
+#  # 是否开启Knife4j增强模式
+#  enable: true
+#  # 开启生产环境屏蔽
+#  production: false
+#  basic:
+#    enable: false
+#    username: root
+#    password: root
+#customize:
+#  swagger:
+#    enable: true

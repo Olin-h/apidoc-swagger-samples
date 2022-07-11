@@ -23,3 +23,5 @@ SpringDoc官网地址：https://springdoc.org/
 [swagger-v2-sample](./swagger-v2-sample/README.md)
 
 [swagger-v3-sample](./swagger-v3-sample/README.md)
+
+[knife4j-swagger-sample](./knife4j-swagger-sample/README.md)

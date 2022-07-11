@@ -19,5 +19,3 @@ spring:
         file-extension: yaml
         namespace: apidoc-swagger-samples
         group: DEV_GROUP
-#knife4j:
-#  enable: true

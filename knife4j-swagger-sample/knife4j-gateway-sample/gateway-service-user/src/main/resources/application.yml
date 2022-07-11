@@ -19,21 +19,19 @@ spring:
         file-extension: yaml
         namespace: apidoc-swagger-samples
         group: DEV_GROUP
+  main:
+    allow-bean-definition-overriding: true
 
-# knife4j配置
-knife4j:
-  # 是否开启Knife4j增强模式
-  enable: true
-  # 是否生产环境
-  production: false
-  basic:
+## knife4j配置
+#knife4j:
+#  # 是否开启Knife4j增强模式
+#  enable: true
+#  # 是否生产环境
+#  production: false
+#  basic:
+#    enable: false
+#    username: root
+#    password: root
+customize:
+  swagger:
     enable: true
-    username: root
-    password: root
-  setting:
-    # 是否不显示Knife4j默认的footer，默认为true(显示)
-    enableFooter: false
-    # 是否自定义Footer，默认为false(非自定义)
-    enableFooterCustom: true
-    # 自定义Footer内容,支持Markdown语法
-    footerCustomContent: Apache License 2.0 | Copyright  2020-2022

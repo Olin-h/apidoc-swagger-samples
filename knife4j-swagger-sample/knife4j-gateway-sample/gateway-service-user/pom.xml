@@ -19,11 +19,11 @@
     </properties>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-micro-spring-boot-starter</artifactId>
             <version>${knife4j-micro.version}</version>
-        </dependency>
+        </dependency>-->
 
         <!-- nacos 服务发现与注册 -->
         <dependency>
@@ -34,6 +34,12 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.olinonee.framework</groupId>
+            <artifactId>knife4j-use-case-sample</artifactId>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 </project>

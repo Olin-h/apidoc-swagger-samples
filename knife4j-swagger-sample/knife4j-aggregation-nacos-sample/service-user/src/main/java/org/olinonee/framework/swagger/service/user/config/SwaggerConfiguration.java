@@ -28,7 +28,8 @@ public class SwaggerConfiguration {
 
     @Bean(value = "userApi")
     public Docket userApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
+        // return new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.OAS_30)
                 .apiInfo(userApiInfo())
                 .select()
                 // 指定目录生成API

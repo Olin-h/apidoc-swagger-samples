@@ -27,7 +27,8 @@ public class SwaggerConfiguration {
 
     @Bean(value = "orderApi")
     public Docket orderApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
+        // return new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.OAS_30)
                 .apiInfo(orderApiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
