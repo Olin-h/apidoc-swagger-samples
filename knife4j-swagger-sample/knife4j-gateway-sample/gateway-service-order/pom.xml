@@ -36,12 +36,6 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
-        <!--<dependency>
-            <groupId>org.olinonee.framework</groupId>
-            <artifactId>knife4j-use-case-sample</artifactId>
-            <version>1.0.1</version>
-        </dependency>-->
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
